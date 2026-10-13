@@ -1,0 +1,53 @@
+{
+  "name": "@forumulate/mcp",
+  "version": "0.1.0",
+  "description": "Connect Claude Desktop, Claude Code, Cursor and VS Code to Forumulate: a stdio MCP server that bridges to Forumulate's hosted MCP servers.",
+  "license": "MIT",
+  "homepage": "https://forumulate.com/guides",
+  "bugs": {
+    "url": "https://forumulate.com/community"
+  },
+  "keywords": [
+    "forumulate",
+    "mcp",
+    "model-context-protocol",
+    "claude",
+    "cursor",
+    "docs",
+    "forum",
+    "ai-agent"
+  ],
+  "bin": {
+    "forumulate-mcp": "dist/bin.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit --incremental --tsBuildInfoFile node_modules/.cache/tsc-src.tsbuildinfo",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.30.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "typescript": "^5.6.3"
+  },
+  "author": "Forumulate",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/forumulate/mcp.git"
+  }
+}
